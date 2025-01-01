@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
       </Link>
 
       <Link
-        href="https://web.facebook.com/profile.php?id=61554659567321"
+        href="https://web.facebook.com/profile.php?id=100089536842727"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-400 hover:text-blue-500 transition-colors duration-300"

@@ -27,6 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
+            
               href="#projects"
               className="hover:text-blue-400 transition duration-300"
             >
