@@ -37,7 +37,10 @@ const Contact = () => {
   return (
     <section className="min-h-screen bg-gray-900 text-white py-16 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-8">Contact Us</h2>
+        <h1 className="text-4xl font-bold text-center mb-4">Contact me</h1>
+        <p className="text-2xl font-bold text-center mb-8">
+          Let's connect and solve the massive problem together.
+        </p>
         <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
           <form ref={form} onSubmit={sendEmail}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">

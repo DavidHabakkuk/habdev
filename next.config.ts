@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,9 +13,11 @@ export default {
         foreground: "var(--foreground)",
       },
       animation: {
-        'spin-slow': 'spin 60s linear infinite', // 60s for a very slow rotation
+        "spin-slow": "spin 60s linear infinite", // 60s for a very slow rotation
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;

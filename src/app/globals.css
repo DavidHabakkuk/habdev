@@ -18,9 +18,15 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: smooth;
+
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
 }
+
+html, body {
+  overflow: auto; /* Allow scrolling */
+}
+
 input:focus, textarea:focus {
   outline: none;
   box-shadow: 0 0 5px #4299e1;
