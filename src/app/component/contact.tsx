@@ -1,90 +1,62 @@
-'use client';
+"use client";
 
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import Link from "next/link";
+import {
+  faLinkedin,
+  faGithub,
+  faInstagram,
+  faFacebook,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
-const Contact = () => {
-  const form = useRef();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage, setResponseMessage] = useState('');
+config.autoAddCss = false;
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setResponseMessage('');
-
-    emailjs
-      .sendForm(
-        'service_fkht90f',   // Replace with your service ID
-        'template_wpu5xmj',  // Replace with your template ID
-        form.current,        // The form you want to submit
-        'KrVtehMRZrvBYeAhv'  // Replace with your public key
-      )
-      .then(
-        () => {
-          setIsSubmitting(false);
-          setResponseMessage('Message sent successfully!');
-          form.current.reset(); // Reset the form after submission
-        },
-        (error) => {
-          setIsSubmitting(false);
-          setResponseMessage('Failed to send message. Please try again.');
-          console.log('FAILED...', error.text);
-        }
-      );
-  };
-
+const SocialLinks: React.FC = () => {
   return (
-    <section className="min-h-screen bg-gray-900 text-white py-16 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4">Contact me</h1>
-        <p className="text-2xl font-bold text-center mb-8">
-          Let's connect and solve the massive problem together.
-        </p>
-        <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
-          <form ref={form} onSubmit={sendEmail}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <input
-                type="text"
-                name="from_name"
-                placeholder="Your Name"
-                required
-                className="w-full p-3 bg-gray-700 text-white rounded focus:outline-none focus:ring focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="w-full p-3 bg-gray-700 text-white rounded focus:outline-none focus:ring focus:ring-blue-500"
-              />
-            </div>
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-              rows={5}
-              className="w-full p-3 bg-gray-700 text-white rounded focus:outline-none focus:ring focus:ring-blue-500 mb-4"
-            ></textarea>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`w-full py-3 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
-          {responseMessage && (
-            <p
-              className={`mt-4 text-center ${responseMessage.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}
-            >
-              {responseMessage}
-            </p>
-          )}
-        </div>
-      </div>
-    </section>
+    <div className="fixed left-4 top-1/3 flex flex-col space-y-6 p-4 rounded-lg bg-transparent shadow-lg">
+      {[
+        {
+          href: "https://www.linkedin.com/in/david-habakkuk-656030288/",
+          icon: faLinkedin,
+          color: "hover:text-blue-600",
+        },
+        {
+          href: "https://github.com/DavidHabakkuk",
+          icon: faGithub,
+          color: "hover:text-gray-500",
+        },
+        {
+          href: "https://instagram.com/yourprofile",
+          icon: faInstagram,
+          color: "hover:text-pink-500",
+        },
+        {
+          href: "https://web.facebook.com/profile.php?id=100089536842727",
+          icon: faFacebook,
+          color: "hover:text-blue-500",
+        },
+        {
+          href: "https://wa.me/+2349063704342",
+          icon: faWhatsapp,
+          color: "hover:text-green-500",
+        },
+      ].map(({ href, icon, color }) => (
+        <Link
+          key={href}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-gray-400 transition-colors duration-300 ${color}`}
+        >
+          <FontAwesomeIcon icon={icon} size="2x" />
+        </Link>
+      ))}
+    </div>
   );
 };
 
-export default Contact;
+export default SocialLinks;
