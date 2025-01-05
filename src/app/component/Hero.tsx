@@ -57,7 +57,7 @@ const Hero = () => {
             download
             className="bg-transparent border border-blue-500 text-blue-500 rounded-full px-10 py-3 shadow-lg hover:bg-blue-500 hover:text-white transition duration-300 text-lg"
           >
-            Download Resume/ CV
+            Download Resume / CV
           </a>
         </div>
       </div>
