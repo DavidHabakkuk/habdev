@@ -4,7 +4,7 @@ import About from "./component/About"
 import Project from "./component/project";
 import Skill from "./component/skill";
 import Contact from "./component/contact"
-import Nav from "./component/Navbar";
+// import Nav from "./component/Navbar";
 import Footer from "./component/Footer"
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Contact/>  
       <Media/>
       <Footer/>
-      <Nav/>
+      {/* <Nav/> */}
      
    </>
    

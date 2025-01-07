@@ -18,7 +18,7 @@ const skills = [
 const SkillsPage = () => {
   return (
     <section className="bg-gray-900 min-h-screen py-20 flex flex-col items-center">
-      <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+      <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">
         My Skillset
       </h1>
       <div className="relative w-96 h-96 flex items-center justify-center">
