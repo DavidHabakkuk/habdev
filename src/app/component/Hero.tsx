@@ -40,9 +40,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg leading-snug tracking-wide">
           <TypingAnimation />
         </h1>
-        <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto">
-          As a passionate Front-End Developer, I am always eager to solve problems and embrace new learning opportunities. Let’s collaborate and tackle challenges together.
-        </p>
+       
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center mt-10">
