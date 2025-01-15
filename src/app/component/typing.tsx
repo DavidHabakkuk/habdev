@@ -3,29 +3,30 @@
 import React, { useEffect, useState } from "react";
 
 const texts = [
-  "Hello, I am <span class='text-blue-500'>David Habakkuk</span>.",
-  "<span class='text-blue-500'>Frontend Developer</span>.",
+  "Welcome to <span class='text-blue-500'>HabDev</span>,",
+  "<span class='text-blue-500'>A Software Development Company</span>,",
+  "Building your <span class='text-blue-500'>dreams</span> into reality.",
 ];
 
 const TypingAnimation: React.FC = () => {
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(150); // Initial speed for typing
+  const [speed, setSpeed] = useState(150);
 
   useEffect(() => {
     const currentText = texts[textIndex];
     const timeoutId = setTimeout(() => {
       if (isDeleting) {
         setDisplayText((prev) => prev.slice(0, -1));
-        setSpeed(120); // Faster when deleting
+        setSpeed(120);
       } else {
         setDisplayText((prev) => currentText.slice(0, prev.length + 1));
-        setSpeed(150); // Slower when typing
+        setSpeed(150);
       }
 
       if (!isDeleting && displayText === currentText) {
-        setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
+        setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && displayText === "") {
         setIsDeleting(false);
         setTextIndex((prev) => (prev + 1) % texts.length);
@@ -37,9 +38,9 @@ const TypingAnimation: React.FC = () => {
   }, [displayText, isDeleting, textIndex, speed]);
 
   return (
-    <div className="text-center max-w-4xl md:mt-[0rem] lg:mt-[3rem] z-20">
+    <div>
       <h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg leading-snug tracking-wide text-white"
+        className="text-center text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug tracking-wide"
         dangerouslySetInnerHTML={{
           __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
         }}

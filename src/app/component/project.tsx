@@ -6,9 +6,8 @@ import Link from "next/link";
 
 interface Project {
   title: string;
-  date: { start: string; finish: string };
   imageSrc: string;
-  language: string;
+
   link: string;
   repoLink: string;
 }
@@ -16,10 +15,16 @@ interface Project {
 const projects: Project[] = [
   {
     title: "The Ambassadors' church",
-    date: { start: "July 1, 2023", finish: "August 10, 2023" },
+    
     imageSrc: "/images/pro.png",
-    language: "Next.js, TailwindCSS, Firebase Database",
+    
     link: "https://example.com/project-ambassadors",
+    repoLink: "https://github.com/DavidHabakkuk/church/",
+  },
+  {
+    title: "Glory Realms Teens Ministry",
+    imageSrc: "/images/realms.png",
+    link: "https://gloryrealmsministry.org   ",
     repoLink: "https://github.com/DavidHabakkuk/church/",
   },
   
@@ -52,15 +57,9 @@ const ProjectsPage: React.FC = () => {
                 <h2 className="text-3xl font-semibold text-white mb-3">
                   {project.title}
                 </h2>
-                <p className="text-gray-400 text-sm mb-1">
-                  <strong>Technologies:</strong> {project.language}
-                </p>
-                <p className="text-gray-400 text-sm mb-1">
-                  <strong>Start Date:</strong> {project.date.start}
-                </p>
-                <p className="text-gray-400 text-sm mb-4">
-                  <strong>Finish Date:</strong> {project.date.finish}
-                </p>
+                
+                
+               
                 <div className="flex gap-4">
                   <Link
                     href={project.link}
