@@ -8,7 +8,7 @@ const texts = [
   "Building your <span class='text-blue-500'>dreams</span> into reality.",
 ];
 
-const TypingAnimation: React.FC = () => {
+const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -38,15 +38,23 @@ const TypingAnimation: React.FC = () => {
   }, [displayText, isDeleting, textIndex, speed]);
 
   return (
-    <div>
-      <h1
-        className="text-center text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug tracking-wide"
-        dangerouslySetInnerHTML={{
-          __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
-        }}
-      />
-    </div>
+    <section className="min-h-screen flex items-center justify-center bg-navy-800 text-white relative">
+      <div className="container mx-auto px-4 text-center">
+        <h1
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug tracking-wide transition-all"
+          dangerouslySetInnerHTML={{
+            __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
+          }}
+        />
+        <p className="mt-4 text-lg md:text-xl opacity-90">
+          Discover the power of innovative software tailored for you.
+        </p>
+        <p className="mt-2 text-lg md:text-xl opacity-80">
+          We help businesses thrive with cutting-edge solutions.
+        </p>
+      </div>
+    </section>
   );
 };
 
-export default TypingAnimation;
+export default Hero;

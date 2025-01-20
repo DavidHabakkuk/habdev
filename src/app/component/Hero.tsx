@@ -1,40 +1,46 @@
 "use client";
 
-import React from "react";
-import TypingAnimation from "./typing";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
-const Hero = () => {
+const texts = [
+  "Welcome to <span class='text-blue-500'>HabDev</span>,",
+  "<span class='text-blue-500'>A Software Development Company</span>,",
+  "Building your <span class='text-blue-500'>dreams</span> into reality.",
+];
+
+const Hero: React.FC = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(150);
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    const timeoutId = setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText((prev) => prev.slice(0, -1));
+        setSpeed(100);
+      } else {
+        setDisplayText((prev) => currentText.slice(0, prev.length + 1));
+        setSpeed(150);
+      }
+
+      if (!isDeleting && displayText === currentText) {
+        setTimeout(() => setIsDeleting(true), 1000);
+      } else if (isDeleting && displayText === "") {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+        setSpeed(200);
+      }
+    }, speed);
+
+    return () => clearTimeout(timeoutId);
+  }, [displayText, isDeleting, textIndex, speed]);
+
   return (
-<<<<<<< HEAD
-    <section
-      className="relative h-screen flex flex-col items-center justify-center bg-cover bg-center text-white px-6 md:px-12"
-      style={{
-        backgroundImage: "url('/images/habdev.svg')", // Replace with your image path
-        backgroundSize: "contian",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-      {/* Hero Content */}
-      <div className="relative z-10 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-lg leading-snug tracking-wide">
-          <TypingAnimation />
-        </h1>
-        <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-          Empowering businesses with cutting-edge technology solutions.
-        </p>
-        <button
-          className="mt-8 px-8 py-4 bg-blue-500 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 shadow-lg"
-          onClick={() => window.location.href = "#services"}
-        >
-          Learn More
-        </button>
-      </div>
-=======
-    <section className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white px-6 md:px-12 overflow-hidden">
-      {/* Fixed Logo */}
+    <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
+      {/* Logo Section */}
       <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3">
         <Image
           src="/images/hab.png"
@@ -48,45 +54,21 @@ const Hero = () => {
         </span>
       </div>
 
-      {/* Profile Image */}
-      <div className="absolute top-28 md:top-20 flex justify-center w-full z-10">
-        <div className="relative">
-          <Image
-            src="/images/me.jpg"
-            alt="David Habakkuk Profile"
-            width={250}
-            height={250}
-            className="rounded-full border-4 border-blue-500 shadow-xl"
-          />
-          <div className="absolute inset-0 w-full h-full rounded-full bg-blue-500 opacity-30 blur-lg animate-pulse"></div>
-        </div>
+      {/* Main Content */}
+      <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40 ">
+        <h1
+          className="text-4xl md:text-6xl font-extrabold tracking-wide leading-tight inline-block pb-2"
+          dangerouslySetInnerHTML={{
+            __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
+          }}
+        />
+        <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl">
+          We specialize in creating modern, innovative software solutions that drive growth and transform ideas into reality.
+        </p>
+        <p className="mt-2 text-lg md:text-2xl text-gray-500 max-w-3xl">
+          We help businesses thrive with cutting-edge solutions.
+        </p>
       </div>
-
-      {/* Hero Text */}
-      <div className="text-center max-w-4xl mt-48 md:mt-56 lg:mt-64 z-20 space-y-4">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg leading-snug tracking-wide">
-          <TypingAnimation />
-        </h1>
-
-        {/* Buttons */}
-       
-      </div>
-      <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8">
-        <button
-            className="bg-blue-500 text-white rounded-full px-10 py-3 shadow-lg hover:bg-blue-600 transition duration-300 text-lg"
-            onClick={() => window.location.href = "#projects"}
-          >
-            View Projects
-          </button>
-          <a
-            href="/files/David-Habakkuk-Resume.pdf"
-            download
-            className="bg-transparent border border-blue-500 text-blue-500 rounded-full px-10 py-3 shadow-lg hover:bg-blue-500 hover:text-white transition duration-300 text-lg"
-          >
-            Download Resume / CV
-          </a>
-        </div>
->>>>>>> 7c851d232b7a97eb6e3b2a3c3ae14ba3213c9d49
     </section>
   );
 };

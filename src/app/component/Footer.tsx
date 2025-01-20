@@ -14,7 +14,11 @@ const Footer: React.FC = () => {
     <footer className="fixed right-0 top-0 bottom-0 flex items-center justify-center   text-white w-25">
       <div className="text-center transform rotate-90">
         <p className="text-xs md:text-sm inline  ">
-          © {year} <span className="font-bold">HabDev</span>
+          © {year} <span className="font-bold">
+            Hab 
+            <span className="text-blue-500">Dev</span>
+        
+          </span>
         </p>
       </div>
       

@@ -11,15 +11,15 @@ import {
   faInstagram,
   faFacebook,
   faWhatsapp,
-  faPhone,
 } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons"; // Import phone icon from solid icons
 
 config.autoAddCss = false;
 
 const SocialLinks: React.FC = () => {
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-gray-900 text-white py-3 shadow-lg z-50">
-      <div className="container mx-auto flex justify-center items-center gap-8 overflow-x-auto px-4 scrollbar-hide">
+      <div className="container mx-auto flex justify-center items-center gap-8">
         {/* Social Links */}
         {[
           {
@@ -53,9 +53,9 @@ const SocialLinks: React.FC = () => {
             animationDelay: "0.8s",
           },
           {
-            href: "tel:+2349063704342",
+            href: "tel:09063704342", // Link to call
             icon: faPhone,
-            color: "hover:text-yellow-500",
+            color: "hover:text-green-400",
             animationDelay: "1s",
           },
         ].map(({ href, icon, color, animationDelay }) => (

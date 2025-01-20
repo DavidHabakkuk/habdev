@@ -1,35 +1,26 @@
+import React from "react";
 import Media from "./component/media";
 import Hero from "./component/Hero";
 import About from "./component/About";
-import Team from "./component/Team"
+import Team from "./component/Team";
 import Project from "./component/project";
 import Skill from "./component/skill";
-import Contact from "./component/contact"
-<<<<<<< HEAD
-=======
-// import Nav from "./component/Navbar";
->>>>>>> 7c851d232b7a97eb6e3b2a3c3ae14ba3213c9d49
-import Footer from "./component/Footer"
+import Contact from "./component/contact";
+import Footer from "./component/Footer";
 
-export default function Home() {
+const Page = () => {
   return (
-   <>
-      <Hero/>
-      <About/>
+    <div>
+      <Hero />
+      <About />
       <Team />
-      <Project/>
+      <Project />
       <Skill />
-      <Contact/>  
-      <Media/>
-      <Footer/>
-<<<<<<< HEAD
-=======
-      {/* <Nav/> */}
->>>>>>> 7c851d232b7a97eb6e3b2a3c3ae14ba3213c9d49
-     
-   </>
-   
-   
-  
+      <Contact />
+      <Media />
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Page; // Ensure this is the default export
