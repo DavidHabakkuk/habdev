@@ -23,4 +23,4 @@ const Page = () => {
   );
 };
 
-export default Page; // Ensure this is the default export
+export default Page;
