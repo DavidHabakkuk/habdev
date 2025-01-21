@@ -20,6 +20,7 @@ const Page = () => {
       <Media />
       <Footer />
     </div>
+  );
 };
 
 export default Page;
