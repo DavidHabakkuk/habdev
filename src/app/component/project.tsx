@@ -24,9 +24,16 @@ const projects: Project[] = [
   {
     title: "Glory Realms Teens Ministry",
     imageSrc: "/images/realms.png",
-    link: "https://gloryrealmsministry.org   ",
+    link: "https://www.gloryrealmsministries.org/",
     repoLink: "https://github.com/DavidHabakkuk/church/",
   },
+  {
+    title: "Glory Realms Teens Ministry",
+    imageSrc: "/images/realms.png",
+    link: "https://www.gloryrealmsministries.org/",
+    repoLink: "https://github.com/DavidHabakkuk/church/",
+  },
+ 
   
 ];
 

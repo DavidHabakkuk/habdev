@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)", // Custom CSS variable
-        foreground: "var(--foreground)", // Custom CSS variable
+        background: "var(--background)",
+        foreground: "var(--foreground)", 
         navy: {
           customNavy: "#04033f",
         },
       },
       animation: {
         "spin-slow": "spin 60s linear infinite", 
-        // skill rotational language
-        blink: "blink 1.2s step-start infinite", //  Animation blinking cursor
+        
+        blink: "blink 1.2s step-start infinite", 
       },
       keyframes: {
         blink: {

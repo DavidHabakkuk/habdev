@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
-      {/* Logo Section */}
+      
       <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3">
         <Image
           src="/images/hab.png"
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
         </span>
       </div>
 
-      {/* Main Content */}
+
       <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40 ">
         <h1
           className="text-4xl md:text-6xl font-extrabold tracking-wide leading-tight inline-block pb-2"
