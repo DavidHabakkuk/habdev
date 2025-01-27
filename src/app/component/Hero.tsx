@@ -40,8 +40,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
-      
-      <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3">
+      <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3 animate-fade-in-down">
         <Image
           src="/images/hab.png"
           alt="HabDev Logo"
@@ -53,20 +52,15 @@ const Hero: React.FC = () => {
           Hab<span className="text-white">Dev</span>
         </span>
       </div>
-
-
-      <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40 ">
+      <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40 animate-fade-in">
         <h1
           className="text-4xl md:text-6xl font-extrabold tracking-wide leading-tight inline-block pb-2"
           dangerouslySetInnerHTML={{
             __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
           }}
         />
-        <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl">
+        <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl transition-transform duration-700 hover:translate-x-1">
           We specialize in creating modern, innovative software solutions that drive growth and transform ideas into reality.
-        </p>
-        <p className="mt-2 text-lg md:text-2xl text-gray-500 max-w-3xl">
-          We help businesses thrive with cutting-edge solutions.
         </p>
       </div>
     </section>
