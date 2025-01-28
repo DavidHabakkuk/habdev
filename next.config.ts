@@ -17,7 +17,6 @@ const config: Config = {
       },
       animation: {
         "spin-slow": "spin 60s linear infinite", 
-        
         blink: "blink 1.2s step-start infinite", 
       },
       keyframes: {
