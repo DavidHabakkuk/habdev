@@ -1,32 +1,9 @@
-import type { Config } from "tailwindcss";
+import type { NextConfig } from 'next';
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)", 
-        navy: {
-          customNavy: "#04033f",
-        },
-      },
-      animation: {
-        "spin-slow": "spin 60s linear infinite", 
-        blink: "blink 1.2s step-start infinite", 
-      },
-      keyframes: {
-        blink: {
-          
-        },
-      },
-    },
-  },
-  plugins: [],
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  // Add other Next.js configuration options here
 };
 
-export default config;
+export default nextConfig;
