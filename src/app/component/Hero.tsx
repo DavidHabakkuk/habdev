@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { LiaCalendarCheckSolid } from "react-icons/lia";
+
+
 
 const texts = [
-  "Welcome to <span class='text-blue-500'>HabDev</span>,",
-  "<span class='text-blue-500'>A Software Solution  Company</span>,",
+  "Welcome to <span class='text-blue-500'>HabDev,</span>",
+  "<span class='text-blue-500'>A Software Solution  Company,</span>",
   "Building your <span class='text-blue-500'>dreams</span> into reality.",
 ];
 
@@ -43,17 +43,16 @@ const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
       <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3 animate-fade-in-down">
-        <Link href="/">
-          <a className="text-2xl md:text-3xl font-bold hover:text-blue-500">
-            <Image
-              src="/images/hab.png"
-              alt="HabDev Logo"
-              width={50}
-              height={50}
-              className="rounded-full shadow-lg"
-            />
-          </a>
-        </Link>
+       
+       <Image
+          src="/images/hab.png"
+          alt="HabDev Logo"
+          width={50}
+          height={50}
+          className="rounded-full shadow-lg"
+        />
+    
+
         <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-transparent bg-clip-text tracking-wider">
           Hab<span className="text-white">Tech</span>
         </span>
@@ -66,8 +65,7 @@ const Hero: React.FC = () => {
           }}
         />
         <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl transition-transform duration-700 hover:translate-x-1">
-          We specialize in creating modern, innovative software solutions that
-          drive growth and transform ideas into reality.
+          We specialize in creating modern, innovative software solutions that drive growth and transform ideas into reality.
         </p>
       </div>
     </section>
