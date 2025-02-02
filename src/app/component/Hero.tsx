@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 
-
 const texts = [
   "Welcome to <span class='text-blue-500'>HabDev,</span>",
   "<span class='text-blue-500'>A Software Solution  Company,</span>",
@@ -51,7 +50,7 @@ const Hero: React.FC = () => {
           height={50}
           className="rounded-full shadow-lg"
         />
-    
+  
 
         <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-transparent bg-clip-text tracking-wider">
           Hab<span className="text-white">Tech</span>

@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         <p className="text-xs md:text-sm inline  ">
           © {year} <span className="font-bold">
             Hab 
-            <span className="text-blue-500">Dev</span>
+            <span className="text-blue-500">Tech</span>
         
           </span>
         </p>
