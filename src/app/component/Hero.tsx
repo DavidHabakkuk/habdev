@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
       <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3 animate-fade-in-down">
-       <LiaCalendarCheckSolidink href="/">
+       <Link href="/">
        <Image
           src="/images/hab.png"
           alt="HabDev Logo"
