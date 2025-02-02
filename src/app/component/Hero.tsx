@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const texts = [
   "Welcome to <span class='text-blue-500'>HabDev</span>,",
-  "<span class='text-blue-500'>A Software Development Company</span>,",
+  "<span class='text-blue-500'>A Software Solution  Company</span>,",
   "Building your <span class='text-blue-500'>dreams</span> into reality.",
 ];
 
