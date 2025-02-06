@@ -1,11 +1,19 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32"
+    >
+     <section className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center gap-12 mt-20 transition-transform duration-1000 hover:translate-y-2">
         <div className="relative flex-shrink-0 group">
           <div className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-blue-500">
@@ -53,6 +61,7 @@ const About = () => {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 };
 

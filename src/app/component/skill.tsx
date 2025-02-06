@@ -3,6 +3,7 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiTypescript, SiFirebase } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const skills = [
   { icon: <FaHtml5 className="text-red-500" />, name: "HTML" },
@@ -17,6 +18,12 @@ const skills = [
 
 const SkillsPage = () => {
   return (
+    <motion.section
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative"
+    >
     <section className="bg-gray-900 min-h-screen py-20 flex flex-col items-center">
       <h1 className="text-4xl md:text-5xl font-bold  text-center text-white">
         My Skillset
@@ -40,6 +47,7 @@ const SkillsPage = () => {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 };
 

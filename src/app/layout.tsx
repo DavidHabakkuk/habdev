@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Habdev: let solve your problems.",
-  description: "we are problems solver with planty ",
+  title: "HabTech we are ready to build your dreams .",
+  description: "A Software Solution  Company. ",
 };
 
 export default function RootLayout({

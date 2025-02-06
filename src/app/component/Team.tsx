@@ -1,8 +1,16 @@
 import React from 'react';
+import { motion } from "framer-motion";
 
  const Team: React.FC = () => {
   return (
+    
     <section className="bg-gray-800 rounded-lg shadow-lg p-8 md:p-12">
+      <motion.section
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative"
+    ></motion.section>
       <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-400 mb-8">
         My Team
       </h2>
@@ -40,6 +48,7 @@ import React from 'react';
         </li>
       </ul>
     </section>
+    
   );
 };
 export default Team;

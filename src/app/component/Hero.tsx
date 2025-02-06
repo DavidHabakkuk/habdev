@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 const texts = [
-  "Welcome to <span class='text-blue-500'>HabDev,</span>",
-  "<span class='text-blue-500'>A Software Solution  Company,</span>",
+  "Welcome to <span class='text-blue-500'>HabTech,</span>",
+  "<span class='text-blue-500'>A Software Solution Company,</span>",
   "Building your <span class='text-blue-500'>dreams</span> into reality.",
 ];
 
@@ -40,34 +40,30 @@ const Hero: React.FC = () => {
   }, [displayText, isDeleting, textIndex, speed]);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative">
-      <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3 animate-fade-in-down">
-       
-       <Image
-          src="/images/hab.png"
-          alt="HabDev Logo"
-          width={50}
-          height={50}
-          className="rounded-full shadow-lg"
-        />
-  
-
+    <motion.section
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="min-h-screen flex flex-col items-center justify-between bg-gray-900 text-white relative"
+    >
+      <div className="fixed top-4 left-4 md:top-6 md:left-20 z-30 flex items-center gap-3">
+        <Image src="/images/hab.png" alt="HabDev Logo" width={50} height={50} className="rounded-full shadow-lg" />
         <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-transparent bg-clip-text tracking-wider">
           Hab<span className="text-white">Tech</span>
         </span>
       </div>
-      <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40 animate-fade-in">
+      <div className="flex flex-col items-center text-center px-6 mt-20 md:mt-32 lg:mt-40">
         <h1
           className="text-4xl md:text-6xl font-extrabold tracking-wide leading-tight inline-block pb-2"
           dangerouslySetInnerHTML={{
             __html: `${displayText}<span class="animate-blink text-blue-500">|</span>`,
           }}
         />
-        <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl transition-transform duration-700 hover:translate-x-1">
+        <p className="mt-6 text-lg md:text-2xl text-gray-400 max-w-3xl">
           We specialize in creating modern, innovative software solutions that drive growth and transform ideas into reality.
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
