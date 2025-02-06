@@ -6,16 +6,16 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32"
-    >
-     <section className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center gap-12 mt-20 transition-transform duration-1000 hover:translate-y-2">
-        <div className="relative flex-shrink-0 group">
+    <section className="bg-gray-900 text-white min-h-screen py-12 px-6 md:px-20 lg:px-32 relative overflow-hidden">
+      <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 mt-20">
+        {/* Profile Image Section (Motion from Left on Scroll) */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }} // Start off-screen (left)
+          whileInView={{ opacity: 1, x: 0 }} // Animate when in view
+          viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% is visible
+          transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
+          className="relative flex-shrink-0 group"
+        >
           <div className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-blue-500">
             <Image
               src="/images/profile.png"
@@ -26,13 +26,20 @@ const About = () => {
             />
           </div>
           <div className="absolute inset-0 w-full h-full rounded-full bg-blue-500 opacity-30 blur-lg animate-pulse"></div>
-        </div>
+        </motion.div>
 
-        <div className="text-center lg:text-left">
+        {/* Text Section (Motion from Bottom on Scroll) */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }} // Start off-screen (bottom)
+          whileInView={{ opacity: 1, y: 0 }} // Animate when in view
+          viewport={{ once: true, amount: 0.3 }} // Trigger only once when 30% is visible
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }} // Smooth delay effect
+          className="text-center lg:text-left"
+        >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
             About <span className="text-blue-500">Me</span>
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto lg:mx-0 transition-opacity duration-700 hover:opacity-80">
+          <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto lg:mx-0">
             I'm David Habakkuk, a software developer with over 4 years of
             experience turning complex challenges into powerful digital
             solutions. My passion lies in bringing your ideas to life through
@@ -58,10 +65,9 @@ const About = () => {
               Download Resume / CV
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
-    </motion.section>
   );
 };
 
