@@ -15,10 +15,10 @@ const ContactForm: React.FC = () => {
 
     try {
       await emailjs.sendForm(
-        "service_fkht90f", // Replace with your service ID
-        "template_wpu5xmj", // Replace with your template ID
+        "service_fkht90f",
+        "template_wpu5xmj",
         form.current!,
-        "KrVtehMRZrvBYeAhv" // Replace with your public key
+        "KrVtehMRZrvBYeAhv"
       );
       setResponseMessage("Message sent successfully!");
       form.current?.reset();
@@ -33,9 +33,11 @@ const ContactForm: React.FC = () => {
   return (
     <section className="min-h-screen bg-gray-900 text-white py-16 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4">Contact  <span className="text-blue-500">Us</span></h1>
+        <h1 className="text-4xl font-bold text-center mb-4">
+          Contact <span className="text-blue-500">Us</span>
+        </h1>
         <p className="text-2xl font-bold text-center mb-8">
-          Let's bring your dream to the feature.
+          Let's bring your dream to the future.
         </p>
         <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
           <form ref={form} onSubmit={sendEmail}>
