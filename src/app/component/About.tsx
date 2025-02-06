@@ -38,20 +38,20 @@ const About = () => {
             About <span className="text-blue-500">Me</span>
           </h1>
           <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto lg:mx-0">
-            I'm David Habakkuk, a software developer with over 4 years of
+            I&apos;m David Habakkuk, a software developer with over 4 years of
             experience turning complex challenges into powerful digital
             solutions. My passion lies in bringing your ideas to life through
             modern, innovative technologies.
             <br />
-            Whether it’s designing sleek user interfaces, building robust
+            Whether it&rsquo;s designing sleek user interfaces, building robust
             applications, or crafting end-to-end solutions, I thrive on
-            delivering results that exceed expectations. Let’s collaborate to
+            delivering results that exceed expectations. Let&rsquo;s collaborate to
             transform your dreams into reality!
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mt-10">
             <button
               className="bg-blue-500 text-white rounded-full px-10 py-3 shadow-lg hover:bg-blue-600 transition duration-300 text-lg transform hover:translate-y-1"
-              onClick={() => window.location.href = "#projects"}
+              onClick={() => (window.location.href = "#projects")}
             >
               View Projects
             </button>

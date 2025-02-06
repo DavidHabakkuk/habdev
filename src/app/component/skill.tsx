@@ -20,7 +20,7 @@ const SkillsPage = () => {
   return (
     <section className="bg-gray-900 min-h-screen py-20 flex flex-col items-center">
       <h1 className="text-4xl md:text-5xl font-bold text-center text-white">
-        My Skillset
+       <span className="text-white">My skillset</span>
       </h1>
 
       {/* Rotating Circular Skill Icons with Drop Animation */}
